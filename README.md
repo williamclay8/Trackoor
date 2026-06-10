@@ -4,6 +4,8 @@ Trackoor is a local-first Build Signal OS. It turns private build activity, proo
 
 It does not post, schedule, like, reply, DM, or operate X/Twitter. It prepares copy-ready candidates, evidence links, risk flags, and artifact previews for Clay to review manually.
 
+Live site: <https://williamclay8.github.io/Trackoor/>
+
 ## Run
 
 ```bash
@@ -58,4 +60,4 @@ This writes `dist/git-snapshot.json` with read-only git metadata: branch, dirty 
 
 ## Lumi Status
 
-Local prototype only. Nothing is committed, pushed, deployed, or live unless a later run explicitly performs and verifies those steps.
+Initial public deployment is live on GitHub Pages. Use the latest release proof packet in `docs/releases/` for current local/committed/pushed/deployed/live truth.
