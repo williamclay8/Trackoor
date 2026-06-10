@@ -9,8 +9,11 @@ Date: 2026-06-10
 - Live URL: `https://williamclay8.github.io/Trackoor/`
 - Deployment provider: GitHub Pages
 - Workflow: `Deploy Trackoor`
-- Workflow run: `https://github.com/williamclay8/Trackoor/actions/runs/27299755292`
-- Deployed commit: `6996d2d7a4f09928508ee6bb95403ecc89cfa629`
+- Deployment source: `main`
+- Latest deploy run: check `https://github.com/williamclay8/Trackoor/actions/workflows/pages.yml`
+- Initial successful app deploy run: `https://github.com/williamclay8/Trackoor/actions/runs/27299755292`
+
+This site deploys from the latest successful `main` workflow run. Use the verification commands below to confirm current live state instead of treating this document's own commit SHA as the permanent release SHA.
 
 ## Verification
 
@@ -41,6 +44,7 @@ Observed live evidence:
 - Server: `GitHub.com`
 - Page title/content includes `Trackoor`
 - Live JavaScript includes `redactionQueue`, `parseSignalVault`, and `exportLocalSignals`
+- Later workflow hardening forced GitHub JavaScript Actions to run on Node 24 ahead of the September 2026 Node 20 removal.
 
 ## Lumi State
 
