@@ -7,6 +7,7 @@
     "scripts": {
     "dev": "node scripts/serve.mjs",
     "start": "node scripts/serve.mjs",
+    "build": "node scripts/build-site.mjs",
     "test": "node --test",
     "validate": "node scripts/validate-data.mjs data/sample-build-signal.json",
     "summary": "node scripts/generate-daily-summary.mjs data/sample-build-signal.json",

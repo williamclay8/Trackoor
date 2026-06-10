@@ -21,6 +21,14 @@ npm start
 
 On Render, `scripts/serve.mjs` binds to `0.0.0.0` when the `RENDER` environment flag is present and reads the runtime port from `PORT`.
 
+Static site build:
+
+```bash
+npm run build
+```
+
+The GitHub Pages workflow verifies the app, builds `dist/site`, uploads the artifact, and deploys it from `main`.
+
 Optional local collector:
 
 ```bash
