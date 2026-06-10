@@ -1,0 +1,478 @@
+{
+  "meta": {
+    "date": "2026-06-10",
+    "timezone": "America/Chicago",
+    "manualOnly": true,
+    "sourceBoundary": "Local sample data based on verified run receipts. No social platform writes.",
+    "publishingBoundary": "Drafts are private candidates until Clay manually reviews, edits, and posts."
+  },
+  "threads": [
+    {
+      "id": "agent-workflows",
+      "name": "Agent workflow receipts",
+      "energy": "alive",
+      "color": "teal"
+    },
+    {
+      "id": "lumi-hygiene",
+      "name": "Lumi hygiene",
+      "energy": "ready",
+      "color": "amber"
+    },
+    {
+      "id": "content-os",
+      "name": "Content OS",
+      "energy": "alive",
+      "color": "blue"
+    },
+    {
+      "id": "vanta-proof",
+      "name": "Vanta proof boundary",
+      "energy": "blocked",
+      "color": "red"
+    }
+  ],
+  "activityBlocks": [
+    {
+      "id": "block-2026-06-10-1300",
+      "intervalStart": "2026-06-10T13:00:00-05:00",
+      "intervalEnd": "2026-06-10T14:00:00-05:00",
+      "projects": ["Trackoor"],
+      "threads": ["agent-workflows", "lumi-hygiene"],
+      "privacyClass": "public",
+      "activityMix": {
+        "researchMinutes": 42,
+        "implementationMinutes": 0,
+        "verificationMinutes": 8,
+        "contentMinutes": 20
+      },
+      "narrative": {
+        "whatChanged": "Full-blast research converged on a private Build Signal OS instead of an auto-posting workflow.",
+        "whyItMattered": "The system can make Clay's work visible without turning it into a content treadmill.",
+        "blocker": "No local prototype existed yet.",
+        "lesson": "Proof, decision tension, and manual review are the durable center of the workflow.",
+        "nextStep": "Build a local dashboard that turns signals into scored candidates and visual receipts."
+      },
+      "evidenceRefs": ["proof-full-blast-research", "proof-trackoor-empty-repo"]
+    },
+    {
+      "id": "block-2026-06-10-1400",
+      "intervalStart": "2026-06-10T14:00:00-05:00",
+      "intervalEnd": "2026-06-10T15:00:00-05:00",
+      "projects": ["Content Engine", "Birdclaw"],
+      "threads": ["content-os", "vanta-proof"],
+      "privacyClass": "private",
+      "activityMix": {
+        "researchMinutes": 20,
+        "implementationMinutes": 0,
+        "verificationMinutes": 10,
+        "contentMinutes": 18
+      },
+      "narrative": {
+        "whatChanged": "Existing local automation already covered draft audits and content loop scouting.",
+        "whyItMattered": "Trackoor should feed those systems with better personal build receipts, not duplicate them.",
+        "blocker": "Some candidates rely on private local paths and are not publishable without redaction.",
+        "lesson": "The missing layer is a ledger of signals, proof strength, and public-safe narrative arcs.",
+        "nextStep": "Represent publication status and proof strength in the UI."
+      },
+      "evidenceRefs": ["proof-dual-x-builder", "proof-content-loop-scout"]
+    }
+  ],
+  "signals": [
+    {
+      "id": "sig-full-blast-architecture",
+      "threadId": "agent-workflows",
+      "source": "Full Blast receipt",
+      "sourceType": "agent_receipt",
+      "sourceRef": "thread:019eb2a7",
+      "proofRef": "proof-full-blast-research",
+      "capturedAt": "2026-06-10T13:38:00-05:00",
+      "ownerReviewRequired": true,
+      "rawAssetLocalOnly": true,
+      "redactedAssetRef": null,
+      "redactionStatus": "not_needed",
+      "redactionNotes": "No raw trace or private transcript included.",
+      "reviewedBy": "Clay",
+      "heat": "high",
+      "timestamp": "2026-06-10T13:38:00-05:00",
+      "title": "The workflow should be a candidate generator, not an auto-poster.",
+      "whyItMatters": "It keeps public output tied to evidence, judgment, and manual voice.",
+      "evidenceRefs": ["proof-full-blast-research"]
+    },
+    {
+      "id": "sig-lumi-status",
+      "threadId": "lumi-hygiene",
+      "source": "Git status",
+      "sourceType": "repo_status",
+      "sourceRef": "git-status:Trackoor:2026-06-10T13:42:00-05:00",
+      "proofRef": "proof-trackoor-empty-repo",
+      "capturedAt": "2026-06-10T13:42:00-05:00",
+      "ownerReviewRequired": true,
+      "rawAssetLocalOnly": false,
+      "redactedAssetRef": null,
+      "redactionStatus": "not_needed",
+      "redactionNotes": "Status contains no secret-bearing output.",
+      "reviewedBy": "Clay",
+      "heat": "medium",
+      "timestamp": "2026-06-10T13:42:00-05:00",
+      "title": "Trackoor started as a blank repo with no commits.",
+      "whyItMatters": "The first public artifact can show the birth of the tool with accurate local-only status.",
+      "evidenceRefs": ["proof-trackoor-empty-repo"]
+    },
+    {
+      "id": "sig-content-loop",
+      "threadId": "content-os",
+      "source": "Local automation memory",
+      "sourceType": "automation_memory",
+      "sourceRef": "/Users/clay/.codex/automations/daily-content-engine-practical-loop-scout/memory.md",
+      "proofRef": "proof-content-loop-scout",
+      "capturedAt": "2026-06-10T14:19:00Z",
+      "ownerReviewRequired": true,
+      "rawAssetLocalOnly": true,
+      "redactedAssetRef": "summary-only",
+      "redactionStatus": "redacted",
+      "redactionNotes": "Local paths and private content state summarized only.",
+      "reviewedBy": "Clay",
+      "heat": "medium",
+      "timestamp": "2026-06-10T14:19:00-05:00",
+      "title": "The Content Engine scout already uses ship_candidate, needs_artifact, and retire_or_refresh.",
+      "whyItMatters": "Trackoor can reuse that editorial taxonomy for Clay's personal account.",
+      "evidenceRefs": ["proof-content-loop-scout"]
+    },
+    {
+      "id": "sig-vanta-boundary",
+      "threadId": "vanta-proof",
+      "source": "Safety lane",
+      "sourceType": "safety_rule",
+      "sourceRef": "policy:vanta-beta-safe-claim-boundary",
+      "proofRef": "proof-vanta-claim-boundary",
+      "capturedAt": "2026-06-10T14:30:00-05:00",
+      "ownerReviewRequired": true,
+      "rawAssetLocalOnly": false,
+      "redactedAssetRef": null,
+      "redactionStatus": "not_needed",
+      "redactionNotes": "Policy summary only.",
+      "reviewedBy": "Clay",
+      "heat": "high",
+      "timestamp": "2026-06-10T14:30:00-05:00",
+      "title": "Vanta/private-readiness claims must stay blocked without fresh proof.",
+      "whyItMatters": "Personal posts can be interesting precisely because they show restraint and failed gates.",
+      "evidenceRefs": ["proof-vanta-claim-boundary"]
+    }
+  ],
+  "proofs": [
+    {
+      "id": "proof-full-blast-research",
+      "name": "Full-blast research synthesis",
+      "kind": "research_receipt",
+      "strength": "strong",
+      "status": "local",
+      "publicSafe": true,
+      "summary": "Five lanes converged on local-first tracking, manual-only publishing, proof-bound candidates, and visual artifact previews."
+    },
+    {
+      "id": "proof-trackoor-empty-repo",
+      "name": "Trackoor repo preflight",
+      "kind": "repo_status",
+      "strength": "usable",
+      "status": "local",
+      "publicSafe": true,
+      "summary": "Repo existed on main with no commits and no project files before this prototype."
+    },
+    {
+      "id": "proof-dual-x-builder",
+      "name": "Paused dual X draft audit builder",
+      "kind": "automation_memory",
+      "strength": "usable",
+      "status": "local",
+      "publicSafe": false,
+      "summary": "Existing local automation prepares draft packages only and preserves manual-only social boundaries."
+    },
+    {
+      "id": "proof-content-loop-scout",
+      "name": "Daily Content Engine practical-loop scout",
+      "kind": "automation_memory",
+      "strength": "usable",
+      "status": "local",
+      "publicSafe": false,
+      "summary": "Existing scout classifies content runs as ship_candidate, needs_artifact, retire_or_refresh, or learned."
+    },
+    {
+      "id": "proof-vanta-claim-boundary",
+      "name": "Vanta claim boundary",
+      "kind": "safety_rule",
+      "strength": "strong",
+      "status": "policy",
+      "publicSafe": true,
+      "summary": "No production, mainnet, audit, privacy-readiness, customer, or adoption claims without current receipts."
+    }
+  ],
+  "candidates": [
+    {
+      "id": "cand-proof-to-post",
+      "threadId": "agent-workflows",
+      "artifactId": "artifact-agent-storyboard",
+      "type": "decision_journal",
+      "status": "publish_candidate",
+      "score": 88,
+      "scores": {
+        "proofStrength": 20,
+        "artifactQuality": 17,
+        "novelty": 14,
+        "audienceFit": 14,
+        "freshness": 9,
+        "copyRisk": 4,
+        "secretRisk": 2,
+        "deploymentTruth": 5,
+        "effortToShip": 3
+      },
+      "risk": "low",
+      "deploymentTruth": "local_only",
+      "ownerReviewRequired": true,
+      "manualApproval": "required",
+      "readyDefinition": "Proof attached, copy risk acceptable, redaction passed, deployment truth accurate, and manual approval complete.",
+      "draft": "I am building a local dashboard that turns my agent runs into public-safe build receipts. The trick is not more content. It is evidence, risk flags, and one manual decision: is this actually worth saying?",
+      "readerValue": "Explains the product philosophy and gives other builders a reusable frame.",
+      "evidenceRefs": ["proof-full-blast-research", "proof-trackoor-empty-repo"],
+      "riskNotes": ["Keep as personal workflow, not a production product claim.", "Do not mention private repo paths."],
+      "gates": {
+        "secretScan": "pass",
+        "claimSupport": "pass",
+        "deploymentTruth": "local_only",
+        "manualOnly": "pass"
+      }
+    },
+    {
+      "id": "cand-lumi-ledger",
+      "threadId": "lumi-hygiene",
+      "artifactId": "artifact-lumi-ledger",
+      "type": "proof_screenshot",
+      "status": "publish_candidate",
+      "score": 86,
+      "scores": {
+        "proofStrength": 20,
+        "artifactQuality": 18,
+        "novelty": 13,
+        "audienceFit": 13,
+        "freshness": 8,
+        "copyRisk": 4,
+        "secretRisk": 2,
+        "deploymentTruth": 5,
+        "effortToShip": 3
+      },
+      "risk": "low",
+      "deploymentTruth": "local_only",
+      "ownerReviewRequired": true,
+      "manualApproval": "required",
+      "readyDefinition": "Proof attached, copy risk acceptable, redaction passed, deployment truth accurate, and manual approval complete.",
+      "draft": "The most useful public build artifact might be a tiny status ledger: local, committed, pushed, live. It forces every update to say what is real instead of implying the work has shipped farther than it has.",
+      "readerValue": "Turns repo hygiene into a public trust primitive.",
+      "evidenceRefs": ["proof-trackoor-empty-repo", "proof-full-blast-research"],
+      "riskNotes": ["Show sanitized project labels only.", "Never mark live without deployment proof."],
+      "gates": {
+        "secretScan": "pass",
+        "claimSupport": "pass",
+        "deploymentTruth": "local_only",
+        "manualOnly": "pass"
+      }
+    },
+    {
+      "id": "cand-anti-launch",
+      "threadId": "vanta-proof",
+      "artifactId": "artifact-anti-launch",
+      "type": "anti_launch",
+      "status": "revise",
+      "score": 72,
+      "scores": {
+        "proofStrength": 12,
+        "artifactQuality": 14,
+        "novelty": 13,
+        "audienceFit": 10,
+        "freshness": 7,
+        "copyRisk": 6,
+        "secretRisk": 2,
+        "deploymentTruth": 4,
+        "effortToShip": 4
+      },
+      "risk": "medium",
+      "deploymentTruth": "blocked",
+      "ownerReviewRequired": true,
+      "manualApproval": "blocked",
+      "readyDefinition": "Blocked until a specific current proof packet supports the claim class.",
+      "draft": "Not everything deserves a launch post. Some of the most honest progress is a failed gate: local prototype works, but production/privacy/readiness claims stay blocked until the receipts exist.",
+      "readerValue": "Makes restraint feel like part of the build story.",
+      "evidenceRefs": ["proof-vanta-claim-boundary"],
+      "riskNotes": ["Do not imply a specific Vanta feature is live.", "Keep claim class generic unless a current source packet is attached."],
+      "gates": {
+        "secretScan": "pass",
+        "claimSupport": "needs_review",
+        "deploymentTruth": "blocked",
+        "manualOnly": "pass"
+      }
+    },
+    {
+      "id": "cand-generic-build-log",
+      "threadId": "content-os",
+      "artifactId": "artifact-decision-constellation",
+      "type": "build_log",
+      "status": "archive_or_ignore",
+      "score": 44,
+      "scores": {
+        "proofStrength": 8,
+        "artifactQuality": 5,
+        "novelty": 2,
+        "audienceFit": 6,
+        "freshness": 6,
+        "copyRisk": 2,
+        "secretRisk": 1,
+        "deploymentTruth": 5,
+        "effortToShip": 9
+      },
+      "risk": "low",
+      "deploymentTruth": "local_only",
+      "ownerReviewRequired": true,
+      "manualApproval": "rejected",
+      "readyDefinition": "Rejected because it lacks a lesson, decision, or proof tension.",
+      "draft": "Built a dashboard today. More soon.",
+      "readerValue": "Too generic to carry real signal.",
+      "evidenceRefs": ["proof-trackoor-empty-repo"],
+      "riskNotes": ["No lesson, decision, or proof tension."],
+      "gates": {
+        "secretScan": "pass",
+        "claimSupport": "weak",
+        "deploymentTruth": "local_only",
+        "manualOnly": "pass"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "artifact-lumi-ledger",
+      "name": "Lumi Ledger",
+      "type": "ledger",
+      "summary": "A status strip that separates local work from committed, pushed, and live reality.",
+      "rows": [
+        {
+          "project": "Trackoor",
+          "local": "dirty",
+          "committed": "no",
+          "pushed": "no",
+          "live": "no",
+          "next": "Verify prototype, then decide whether to commit."
+        },
+        {
+          "project": "Content Engine",
+          "local": "clean",
+          "committed": "yes",
+          "pushed": "unknown",
+          "live": "not_applicable",
+          "next": "Use only source-bound candidates."
+        },
+        {
+          "project": "Birdclaw",
+          "local": "clean",
+          "committed": "yes",
+          "pushed": "ahead",
+          "live": "unknown",
+          "next": "Resolve publication route before relying on it."
+        }
+      ]
+    },
+    {
+      "id": "artifact-agent-storyboard",
+      "name": "Agent Work Storyboard",
+      "type": "storyboard",
+      "summary": "Four panels that make an agent run legible without exposing private traces.",
+      "panels": [
+        {
+          "title": "Goal",
+          "body": "Turn private build work into public-safe personal account material."
+        },
+        {
+          "title": "Lanes",
+          "body": "Research, visual artifacts, capture schema, safety, and product shape."
+        },
+        {
+          "title": "Finding",
+          "body": "The missing layer is not auto-posting. It is proof-bound candidate selection."
+        },
+        {
+          "title": "Proof",
+          "body": "Local schema, UI, validation, and manual-only gates."
+        }
+      ]
+    },
+    {
+      "id": "artifact-decision-constellation",
+      "name": "Decision Constellation",
+      "type": "constellation",
+      "summary": "A map of public claims, supporting proof, and blocked edges.",
+      "nodes": [
+        {
+          "id": "claim",
+          "label": "Build in public needs receipts",
+          "kind": "claim"
+        },
+        {
+          "id": "proof",
+          "label": "Full-blast lane synthesis",
+          "kind": "proof"
+        },
+        {
+          "id": "block",
+          "label": "No auto-posting",
+          "kind": "blocker"
+        },
+        {
+          "id": "artifact",
+          "label": "Trackoor prototype",
+          "kind": "artifact"
+        }
+      ],
+      "edges": [
+        ["claim", "proof"],
+        ["claim", "block"],
+        ["proof", "artifact"]
+      ]
+    },
+    {
+      "id": "artifact-anti-launch",
+      "name": "Anti-Launch Card",
+      "type": "anti_launch",
+      "summary": "A receipt for work that should not be promoted yet.",
+      "gate": "Blocked from production/privacy-readiness wording until fresh receipts exist.",
+      "next": "Attach a verified public-safe proof packet or keep as internal learning."
+    }
+  ],
+  "distributionLedger": [
+    {
+      "id": "ledger-001",
+      "artifactId": "artifact-lumi-ledger",
+      "channel": "manual_review",
+      "status": "not_published",
+      "date": "2026-06-10",
+      "learning": "Track first; publish only after evidence and voice review."
+    }
+  ],
+  "safetyRules": {
+    "hardBlockers": [
+      "contains_secret_or_private_data",
+      "unsupported_sensitive_claim",
+      "implies_live_or_production_without_proof",
+      "violates_manual_only_boundary"
+    ],
+    "deploymentTruthLadder": [
+      "local_only",
+      "committed",
+      "pushed",
+      "deployed",
+      "live_verified"
+    ],
+    "candidateThresholds": {
+      "publish_candidate": 80,
+      "revise": 60,
+      "archive_or_ignore": 0
+    },
+    "manualOnly": true
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.trackoor/schema/build-signal.schema.json",
+  "title": "Trackoor Build Signal Data",
+  "type": "object",
+  "required": [
+    "meta",
+    "threads",
+    "activityBlocks",
+    "signals",
+    "proofs",
+    "candidates",
+    "artifacts",
+    "distributionLedger",
+    "safetyRules"
+  ],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["date", "timezone", "manualOnly", "sourceBoundary", "publishingBoundary"]
+    },
+    "threads": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "energy", "color"]
+      }
+    },
+    "signals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "threadId",
+          "source",
+          "sourceType",
+          "sourceRef",
+          "proofRef",
+          "capturedAt",
+          "ownerReviewRequired",
+          "rawAssetLocalOnly",
+          "redactionStatus",
+          "reviewedBy",
+          "title",
+          "whyItMatters",
+          "evidenceRefs"
+        ]
+      }
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "threadId",
+          "artifactId",
+          "type",
+          "status",
+          "score",
+          "scores",
+          "risk",
+          "deploymentTruth",
+          "ownerReviewRequired",
+          "manualApproval",
+          "draft",
+          "readerValue",
+          "evidenceRefs",
+          "riskNotes",
+          "gates"
+        ]
+      }
+    }
+  }
+}

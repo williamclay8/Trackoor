@@ -1,0 +1,19 @@
+{
+    "name": "trackoor",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local-first Build Signal OS for turning work receipts into manual review social artifacts.",
+  "type": "module",
+    "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "start": "node scripts/serve.mjs",
+    "test": "node --test",
+    "validate": "node scripts/validate-data.mjs data/sample-build-signal.json",
+    "summary": "node scripts/generate-daily-summary.mjs data/sample-build-signal.json",
+    "snapshot:git": "node scripts/capture-git-snapshot.mjs",
+    "check:static": "node scripts/check-static.mjs",
+    "check:safety": "node scripts/check-safety.mjs",
+    "check:runtime": "node scripts/check-runtime.mjs",
+    "verify": "npm run validate && npm test && npm run summary && npm run check:static && npm run check:safety && npm run check:runtime"
+  }
+}

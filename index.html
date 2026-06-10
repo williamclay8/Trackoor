@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Trackoor</title>
+    <link rel="stylesheet" href="src/styles.css">
+  </head>
+  <body>
+    <div class="desk-shell">
+      <aside class="capture-rail" aria-label="Local capture rail">
+        <div class="brand-block">
+          <p class="eyebrow">Build Signal OS</p>
+          <h1>Trackoor</h1>
+          <p class="status-pill">Manual review only</p>
+        </div>
+
+        <form id="captureForm" class="capture-form">
+          <label for="signalInput">Capture a build signal</label>
+          <textarea id="signalInput" rows="6" placeholder="What changed, broke, clicked, or became worth explaining?"></textarea>
+
+          <label for="sourceType">Signal type</label>
+          <select id="sourceType">
+            <option value="build_note">Build note</option>
+            <option value="screenshot_demo">Screenshot/demo</option>
+            <option value="commit_change">Commit/change</option>
+            <option value="bug_fixed">Bug fixed</option>
+            <option value="insight_learned">Insight learned</option>
+            <option value="metric_proof">Metric/proof</option>
+            <option value="open_loop">Open loop</option>
+          </select>
+
+          <label for="arcSelect">Arc</label>
+          <select id="arcSelect"></select>
+
+          <button class="primary-button" type="submit">Create Signal</button>
+          <div class="capture-actions">
+            <button id="exportLocalSignals" class="secondary-button" type="button">Export Vault</button>
+            <label class="secondary-button file-button" for="importVault">Import Vault</label>
+            <input id="importVault" class="visually-hidden" type="file" accept="application/json,.json">
+            <button id="clearLocalSignals" class="secondary-button" type="button">Clear Local</button>
+          </div>
+          <p id="captureHelp" class="tiny-note">Local memory only. Raw signals are not posted, synced, or exported.</p>
+        </form>
+
+        <div class="rail-block">
+          <p class="rail-label">Narrative Arcs</p>
+          <div id="threadRail" class="thread-rail"></div>
+        </div>
+      </aside>
+
+      <main class="signal-workspace">
+        <section class="topbar" aria-label="Run status">
+          <div>
+            <p class="eyebrow">Build Signal Desk</p>
+            <h2 id="topOutcome">What from the actual building is worth turning into a public artifact?</h2>
+          </div>
+          <div id="statusMetrics" class="status-metrics"></div>
+        </section>
+
+        <section id="today" class="section-band desk-intro">
+          <div id="todayMove" class="today-grid"></div>
+        </section>
+
+        <section id="signals" class="section-band">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Signal Canvas</p>
+              <h2>Raw evidence becoming story material</h2>
+            </div>
+            <button id="exportSummary" class="secondary-button" type="button">Export Summary</button>
+          </div>
+          <div id="signalCanvas" class="signal-canvas"></div>
+        </section>
+
+        <section id="candidates" class="section-band">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Candidate Studio</p>
+              <h2>Evidence-bound drafts</h2>
+            </div>
+            <div id="candidateFilters" class="segmented-control" aria-label="Candidate filters"></div>
+          </div>
+          <div id="candidateGrid" class="candidate-grid"></div>
+        </section>
+
+        <section id="redaction" class="section-band">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Redaction Queue</p>
+              <h2>Unsafe until reviewed</h2>
+            </div>
+          </div>
+          <div id="redactionQueue" class="redaction-queue"></div>
+        </section>
+
+        <section id="proof" class="section-band">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Proof Shelf</p>
+              <h2>Receipts and risk state</h2>
+            </div>
+          </div>
+          <div id="proofShelf" class="proof-shelf"></div>
+        </section>
+
+        <section class="section-band">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Distribution Ledger</p>
+              <h2>What left the room</h2>
+            </div>
+          </div>
+          <div id="distributionLedger" class="ledger-list"></div>
+        </section>
+      </main>
+
+      <aside id="artifactDrawer" class="artifact-drawer" aria-label="Artifact shaping drawer">
+        <div class="drawer-header">
+          <p class="eyebrow">Artifact Drawer</p>
+          <h2 id="selectedArtifactName">Select a signal</h2>
+          <p class="muted-line">Shape the draft, inspect proof, then copy manually.</p>
+        </div>
+        <div id="artifactChooser" class="artifact-tabs" aria-label="Artifact previews"></div>
+        <div id="artifactPreview" class="artifact-preview"></div>
+      </aside>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="src/app.js"></script>
+  </body>
+</html>
