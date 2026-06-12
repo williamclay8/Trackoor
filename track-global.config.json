@@ -1,0 +1,12 @@
+{
+  "roots": ["~/Documents", "~/dev", "~/code", "~/Projects", "~/src"],
+  "maxDepth": 3,
+  "intervalSeconds": 60,
+  "agentDirs": {
+    "claude": ["~/.claude/projects"],
+    "codex": ["~/.codex/sessions", "~/.codex/log"]
+  },
+  "agentDebounceMinutes": 30,
+  "ignoreDirs": ["node_modules", "Library", ".Trash", "dist", "build", ".cache"],
+  "privacyBoundary": "Read-only metadata: repo names, branches, commit counts, file-status counts, agent-session activity timestamps. Never diffs, file contents, commit messages, prompts, or transcripts."
+}

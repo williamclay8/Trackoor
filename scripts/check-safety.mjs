@@ -25,7 +25,11 @@ const bannedRuntimePatterns = [
   { pattern: /\b(api[_-]?key|secret|password|private[_-]?key)\s*[:=]\s*["'][A-Za-z0-9._/-]{12,}/i, label: "secret-like assignment" }
 ];
 
-const allowedChildProcessFiles = new Set(["scripts/capture-git-snapshot.mjs"]);
+const allowedChildProcessFiles = new Set([
+  "scripts/capture-git-snapshot.mjs",
+  "scripts/track-activity.mjs",
+  "scripts/track-global.mjs"
+]);
 
 for await (const file of walk(root)) {
   const relative = file.slice(root.length + 1);

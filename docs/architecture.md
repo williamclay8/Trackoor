@@ -27,6 +27,12 @@ Vault exports are metadata-only JSON files. They include local signal titles, so
 
 The first collector is `scripts/capture-git-snapshot.mjs`. It captures read-only git metadata into `dist/git-snapshot.json`: branch, dirty state, file-status counts, upstream/ahead/behind when available, and deployment-truth labels. It does not read diffs, file contents, env values, logs, remotes with credentials, or commit messages.
 
+The second collector is `scripts/track-activity.mjs` (`npm run track`, or `npm run track:watch` for continuous polling). It appends activity events to the append-only audit trail at `dist/audit-trail.jsonl`: commits recorded (count and short hash only), branch switches, work-in-progress pulses from file-status counts, and session boundaries. It honors the same privacy boundary as the snapshot collector: metadata only, never commit messages, diffs, or file contents.
+
+The third collector is `scripts/track-global.mjs` (`npm run track:global`). It watches every git repository under the roots configured in `track-global.config.json`, plus Claude Code and Codex session directories (mtime-based activity detection only). It appends to the same audit trail with repo names in event summaries. `scripts/install-watcher.sh` installs it as a `launchd` LaunchAgent (`com.trackoor.watcher`) so it runs at login, restarts on failure, and logs to `~/.trackoor/watcher.log`; `scripts/uninstall-watcher.sh` removes it. This revises the earlier "no durable automation install" non-goal: the watcher is an explicit, owner-installed agent with the same metadata-only privacy boundary — never diffs, file contents, commit messages, prompts, or transcripts.
+
+`src/audit.js` is the audit-trail core. It merges collector events with in-app action events (captures, exports, imports, copies) stored in `localStorage`, derives work sessions, streaks, day stats, and milestones, and composes post drafts and a day card for the Share Studio. Every draft is marked `ownerReviewRequired: true`; the manual-only posting boundary is unchanged.
+
 ## Safety Gates
 
 Every candidate must expose:
